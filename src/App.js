@@ -9,7 +9,7 @@ import Post from './pages/Post';
 
 
 const App = () => {
-  const [posts, setPosts] = useState([])
+
 
 
   return (
