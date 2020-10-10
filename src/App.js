@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Switch,
   Route,
@@ -9,6 +9,9 @@ import Post from './pages/Post';
 
 
 const App = () => {
+  const [posts, setPosts] = useState([])
+
+
   return (
     <div>
       <Switch>
