@@ -27,9 +27,8 @@ const Home = () => {
   });
 
   return (
-    <main className="main">
+    <main className="home">
       <div className="container">
-        <div className="wrapper--inner">
       <Search searchQuery={searchQuery} setQuery={setQuery} />
       {posts.length !== 0 ? (
         <>
@@ -50,7 +49,6 @@ const Home = () => {
       ) : (
         <Spinner className="spinner" intent={Intent.PRIMARY} />
       )}
-      </div>
       </div>
     </main>
   );

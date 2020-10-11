@@ -27,9 +27,8 @@ const PostPage = (props) => {
   }, [responseCondition]);
 
   return (
-    <main className="main">
+    <main className="post">
       <div className="container">
-        <div className="wrapper--inner">
       {responseCondition ? (
         <div className="post__box">
           <p>
@@ -45,7 +44,6 @@ const PostPage = (props) => {
       ) : (
         <Spinner className="spinner" intent={Intent.PRIMARY} />
       )}
-      </div>
       </div>
     </main>
   );
