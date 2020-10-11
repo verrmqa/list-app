@@ -1,0 +1,8 @@
+@media screen and (max-width: 769px) {
+  * {
+    font-size: 5vw;
+  }
+  .form--search label {
+    font-size: 0.9rem;
+  }
+}

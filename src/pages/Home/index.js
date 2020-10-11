@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
-import Post from "../components/Post";
-import Search from "../components/Search";
+import Post from "../../components/Post";
+import Search from "../../components/Search";
 import axios from "axios";
 import { Spinner, Intent } from "@blueprintjs/core";
+import "./style.css";
+import "./tablet.css";
+import "./mobile.css";
 
 const Home = () => {
   const [posts, setPosts] = useState([]);

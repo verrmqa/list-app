@@ -1,0 +1,19 @@
+@media screen and (max-width: 769px) {
+  * {
+    font-size: 5vw;
+  }
+  .title--post {
+    font-size: 1.1rem;
+  }
+  .text--post {
+    font-size: 0.8rem;
+  }
+  .link--post {
+    width: 4rem;
+    height: 1.2rem;
+    margin-left: auto;
+  }
+  .button--post span {
+    font-size: 0.6rem;
+  }
+}

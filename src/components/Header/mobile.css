@@ -1,0 +1,11 @@
+@media screen and (max-width: 769px) {
+  h2.title--header {
+    font-size: 0.7rem;
+  }
+  h5.title--header {
+    font-size: 0.4rem;
+  }
+  h1.title--header {
+    font-size: 1rem;
+  }
+}

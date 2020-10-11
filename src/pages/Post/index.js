@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Post from "../components/Post";
-import "../App.css";
+import Post from "../../components/Post";
 import { Spinner, Intent } from "@blueprintjs/core";
+import "./style.css";
+import "./tablet.css";
+import "./mobile.css";
 
 const PostPage = (props) => {
   const [post, setPost] = useState(null);
@@ -43,9 +45,11 @@ useEffect(() => {
 
   return (
     <main className="container">
-    {responseCondition ? (
+      {responseCondition ? (
         <div className="post__box">
-          <p className="post--title_data" >Post №{post[0].id} from user №{post[0].userId}</p>
+          <p className="post--title_data">
+            Post №{post[0].id} from user №{post[0].userId}
+          </p>
           <Post
             title={post[0].title}
             body={post[0].body}

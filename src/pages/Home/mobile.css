@@ -1,0 +1,8 @@
+@media screen and (max-width: 769px) {
+  * {
+    font-size: 5vw;
+  }
+  .container {
+    padding: 0 0.625rem;
+  }
+}

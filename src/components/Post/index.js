@@ -1,10 +1,13 @@
 import React from "react";
 import { Button, Card } from "@blueprintjs/core";
 import { Link } from "react-router-dom";
+import "./style.css";
+import "./tablet.css";
+import "./mobile.css";
 
 const Post = ({ title, body, to, text }) => {
   return (
-    <Card interactive={false} className="card" >
+    <Card interactive={false} className="card">
       <h1 className="title--post">{title}</h1>
       <p className="text--post">{body}</p>
       <Link className="link--post" to={to}>

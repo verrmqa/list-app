@@ -1,4 +1,6 @@
-import React from 'react';
+import React from "react";
+import "./style.css";
+import "./mobile.css";
 
 const Header = () => {
   return (
