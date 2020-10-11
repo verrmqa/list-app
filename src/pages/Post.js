@@ -1,39 +1,38 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { Intent, Spinner, Button } from "@blueprintjs/core";
-import logo from '../logo.svg';
-import '../App.css';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import Post from "../components/Post";
+import Header from "../components/Header";
+import "../App.css";
+import { Spinner, Intent } from "@blueprintjs/core";
 
-const Post = (props) => {
+const PostPage = (props) => {
+  const [post, setPost] = useState(null);
+  const [responseCondition, setCondition] = useState(false);
 
-  const [responseState, setResponse] = useState(null)
-  const [responseCondition, setCondition] = useState(false)
-  
-  
-
-async function getPost() {
+  async function getPost() {
     try {
-      const response = await axios.get(`https://jsonplaceholder.typicode.com/posts?id=${props.match.params.postId}`);
-      const responsePost = response.data
-      setResponse(responsePost)
-      setCondition(true)
+      const response = await axios.get(
+        `https://jsonplaceholder.typicode.com/posts?id=${props.match.params.postId}`
+      );
+      const responsePost = response.data;
+      setPost(responsePost);
+      setCondition(true);
     } catch (error) {
       console.error(error);
     }
   }
 
-useEffect(() => {
-  getPost()
-}, [responseCondition])
+  useEffect(() => {
+    getPost();
+  }, [responseCondition]);
 
-
-/* const getPost = () => {
+  /* const getPost = () => {
   axios
     .get(
       `https://jsonplaceholder.typicode.com/posts?id=${props.match.params.postId}`
     )
     .then((response) => console.log("response",response))
-    .then((response) => setResponse(response.data))
+    .then((response) => setPost(response.data))
     .then(console.log("responseState", responseState))
     .then(setCondition(true))
     .catch((error) => console.error(error))
@@ -45,19 +44,18 @@ useEffect(() => {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        { responseCondition ? (
-          <div>
-            <p>{responseState[0].title}</p>
-            <span>{responseState[0].body}</span>
-            <Button onClick={() => props.history.push('/')} intent={ Intent.DANGER } >Main page</Button>
-          </div>
-        ) : (
-          <Spinner intent={Intent.PRIMARY} />
-        ) }
-      </header>
+    <Header />
+      {responseCondition ? (
+        <Post
+          title={post[0].title}
+          body={post[0].body}
+          to={`/`}
+          text="Go back"
+        />
+      ) : (
+        <Spinner intent={Intent.PRIMARY} />
+      )}
     </div>
   );
-}
-export default Post
+};
+export default PostPage;

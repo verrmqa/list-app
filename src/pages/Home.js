@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Post from "../components/Post";
 import Header from "../components/Header";
+import Search from "../components/Search";
 import axios from "axios";
-import { FormGroup, InputGroup, Spinner } from "@blueprintjs/core";
+import { Spinner, Intent } from "@blueprintjs/core";
 
 const Home = () => {
   const [posts, setPosts] = useState([]);
@@ -25,19 +26,18 @@ const Home = () => {
 
   return (
     <div className="App">
-      <Header
-        searchQuery={searchQuery}
-        setQuery={setQuery}
-      />
+      <Header />
+      <Search searchQuery={searchQuery} setQuery={setQuery} />
       {posts.length != 0 ? (
         <div>
-          {filteredPosts.length > 0 ? (
+          {filteredPosts.length != 0 ? (
             filteredPosts.map((post) => (
               <Post
                 title={post.title}
                 body={post.body}
-                id={post.id}
+                to={`/post/${post.id}`}
                 key={post.id}
+                text="See post"
               />
             ))
           ) : (
@@ -45,7 +45,7 @@ const Home = () => {
           )}
         </div>
       ) : (
-        <Spinner />
+        <Spinner intent={Intent.PRIMARY} />
       )}
     </div>
   );
