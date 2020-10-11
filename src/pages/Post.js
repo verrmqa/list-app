@@ -9,8 +9,9 @@ const Post = (props) => {
   const [responseState, setResponse] = useState(null)
   const [responseCondition, setCondition] = useState(false)
   
-  useEffect(() => {
-  async function getPost() {
+  
+
+async function getPost() {
     try {
       const response = await axios.get(`https://jsonplaceholder.typicode.com/posts?id=${props.match.params.postId}`);
       const responsePost = response.data
@@ -21,8 +22,26 @@ const Post = (props) => {
     }
   }
 
+useEffect(() => {
   getPost()
 }, [responseCondition])
+
+
+/* const getPost = () => {
+  axios
+    .get(
+      `https://jsonplaceholder.typicode.com/posts?id=${props.match.params.postId}`
+    )
+    .then((response) => console.log("response",response))
+    .then((response) => setResponse(response.data))
+    .then(console.log("responseState", responseState))
+    .then(setCondition(true))
+    .catch((error) => console.error(error))
+};
+
+useEffect(() => {
+  getPost();
+}, [responseCondition]); */
 
   return (
     <div className="App">
