@@ -27,9 +27,9 @@ const Home = () => {
   });
 
   return (
-    <main>
+    <main className="main">
       <div className="container">
-        <div>
+        <div className="wrapper--inner">
       <Search searchQuery={searchQuery} setQuery={setQuery} />
       {posts.length !== 0 ? (
         <>

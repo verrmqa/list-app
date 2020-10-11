@@ -27,9 +27,9 @@ const PostPage = (props) => {
   }, [responseCondition]);
 
   return (
-    <main>
+    <main className="main">
       <div className="container">
-        <div>
+        <div className="wrapper--inner">
       {responseCondition ? (
         <div className="post__box">
           <p>
