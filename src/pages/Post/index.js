@@ -10,44 +10,29 @@ const PostPage = (props) => {
   const [post, setPost] = useState(null);
   const [responseCondition, setCondition] = useState(false);
 
-  async function getPost() {
-    try {
-      const response = await axios.get(
+  const getPost = () => {
+    axios
+      .get(
         `https://jsonplaceholder.typicode.com/posts?id=${props.match.params.postId}`
-      );
-      const responsePost = response.data;
-      setPost(responsePost);
-      setCondition(true);
-    } catch (error) {
-      console.error(error);
-    }
-  }
+      )
+      .then((response) => {
+        setPost(response.data);
+        setCondition(true);
+      })
+      .catch((error) => console.error(error));
+  };
 
   useEffect(() => {
     getPost();
   }, [responseCondition]);
 
-  /* const getPost = () => {
-  axios
-    .get(
-      `https://jsonplaceholder.typicode.com/posts?id=${props.match.params.postId}`
-    )
-    .then((response) => console.log("response",response))
-    .then((response) => setPost(response.data))
-    .then(console.log("responseState", responseState))
-    .then(setCondition(true))
-    .catch((error) => console.error(error))
-};
-
-useEffect(() => {
-  getPost();
-}, [responseCondition]); */
-
   return (
-    <main className="container">
+    <main>
+      <div className="container">
+        <div>
       {responseCondition ? (
         <div className="post__box">
-          <p className="post--title_data">
+          <p>
             Post №{post[0].id} from user №{post[0].userId}
           </p>
           <Post
@@ -60,6 +45,8 @@ useEffect(() => {
       ) : (
         <Spinner className="spinner" intent={Intent.PRIMARY} />
       )}
+      </div>
+      </div>
     </main>
   );
 };

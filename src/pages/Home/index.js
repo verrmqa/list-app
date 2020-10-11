@@ -27,10 +27,12 @@ const Home = () => {
   });
 
   return (
-    <main className="container">
+    <main>
+      <div className="container">
+        <div>
       <Search searchQuery={searchQuery} setQuery={setQuery} />
       {posts.length !== 0 ? (
-        <div>
+        <>
           {filteredPosts.length !== 0 ? (
             filteredPosts.map((post) => (
               <Post
@@ -44,10 +46,12 @@ const Home = () => {
           ) : (
             <span>No posts found</span>
           )}
-        </div>
+        </>
       ) : (
         <Spinner className="spinner" intent={Intent.PRIMARY} />
       )}
+      </div>
+      </div>
     </main>
   );
 };
