@@ -4,6 +4,7 @@ import { FormGroup, InputGroup } from "@blueprintjs/core";
 const Search = ({searchQuery, setQuery}) => {
   return (
       <FormGroup
+        className="form--search"
         helperText="Search post..."
         label="Search"
         labelFor="text-input"

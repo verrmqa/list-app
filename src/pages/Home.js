@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Post from "../components/Post";
-import Header from "../components/Header";
 import Search from "../components/Search";
 import axios from "axios";
 import { Spinner, Intent } from "@blueprintjs/core";
@@ -25,12 +24,11 @@ const Home = () => {
   });
 
   return (
-    <div className="App">
-      <Header />
+    <main className="container">
       <Search searchQuery={searchQuery} setQuery={setQuery} />
-      {posts.length != 0 ? (
+      {posts.length !== 0 ? (
         <div>
-          {filteredPosts.length != 0 ? (
+          {filteredPosts.length !== 0 ? (
             filteredPosts.map((post) => (
               <Post
                 title={post.title}
@@ -45,9 +43,9 @@ const Home = () => {
           )}
         </div>
       ) : (
-        <Spinner intent={Intent.PRIMARY} />
+        <Spinner className="spinner" intent={Intent.PRIMARY} />
       )}
-    </div>
+    </main>
   );
 };
 

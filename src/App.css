@@ -2,41 +2,290 @@
 @import "~normalize.css";
 @import "~@blueprintjs/core/lib/css/blueprint.css";
 @import "~@blueprintjs/icons/lib/css/blueprint-icons.css";
-.App {
-  text-align: center;
+* {
+  padding: unset;
+  margin: unset;
+  border: unset;
+  outline: unset;
+  font-weight: 400;
+  font-family: 'Geometria', arial, sans-serif;
+  font-size: 1vw;
+  color: #2F2E2C;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+  
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: unset;
+  font-weight: unset;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1::-moz-selection,
+h2::-moz-selection,
+h3::-moz-selection,
+h4::-moz-selection,
+h5::-moz-selection,
+h6::-moz-selection {
+  background: #fe817a;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+h1::selection,
+h2::selection,
+h3::selection,
+h4::selection,
+h5::selection,
+h6::selection {
+  background: #fe817a;
+}
+
+body {
+  background-color: #ffffff;
+}
+
+ul,
+ol,
+li,
+a,
+p,
+span,
+strong,
+i,
+em,
+div,
+section {
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+  margin: unset;
+}
+
+ul::-moz-selection,
+ol::-moz-selection,
+li::-moz-selection,
+a::-moz-selection,
+p::-moz-selection,
+span::-moz-selection,
+strong::-moz-selection,
+i::-moz-selection,
+em::-moz-selection,
+div::-moz-selection,
+section::-moz-selection {
+  background: #fe817a;
+}
+
+ul::selection,
+ol::selection,
+li::selection,
+a::selection,
+p::selection,
+span::selection,
+strong::selection,
+i::selection,
+em::selection,
+div::selection,
+section::selection {
+  background: #fe817a;
+}
+
+img {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: #737373;
+  text-decoration: unset;
+}
+
+strong,
+b {
+  font-weight: 600;
+}
+
+i,
+em {
+  font-style: italic;
+}
+
+ul,
+ol,
+li,
+button,
+span {
+  display: block;
+}
+
+button,
+a {
+  cursor: pointer;
+}
+
+
+@media screen and (min-width: 1600px) {
+  * {
+    font-size: 16px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 50vh;
+.container {
+  max-width: 100rem;
+  padding: 0 12.5rem;
+  margin: 0 auto;
+}
+
+html, body, #root, .wrapper {
+  height: 100%;
+}
+.wrapper {
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+main {
+  flex-grow: 1;
+}
+.container__bg {
+  width: 100%;
+}
+.header {
+  background-color: #282c34;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
+  padding: 0.3rem 0;
+}
+.title--header {
+  text-transform: uppercase;
+  color: #fff;
+}
+h5.title--header {
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  color: #fff;
+}
+h1.title--header {
+  text-transform: uppercase;
+  font-weight: 600;
+  line-height: 1;
+  color: #fff;
+}
+.title--post {
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 1;
+}
+.text--post {
+  padding: 0.5rem 0 1rem 0;
+  font-size: 1.1039rem;
+}
+.form--search {
+  padding: 1rem 0 0.5rem;
+}
+.card {
+  margin: 1rem 0;
+}
+.link--post {
+  display: block;
+  width: 7rem;
+  height: 2rem;
+}
+.button--post {
+  width: 100%;
+  height: 100%;
+}
+.spinner {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.button--post span {
+  font-size: 0.9rem;
+}
+.footer {
+  background-color: #282c34;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  padding: 0.3rem 0;
+}
+.text--footer {
+  text-align: end;
+  color: #7b7b7b;
+}
+.post__box {
+  margin-top: 1rem;
 }
 
-.App-link {
-  color: #61dafb;
+
+/* планшетная версия */
+@media screen and (max-width: 1200px) {
+  * {
+      font-size: 2.0833vw;
+  }
+  .container {
+    padding: 0 1.5625rem;
+  } 
+  .text--post {
+    font-size: 1rem;
+  }
+  .link--post {
+    width: 5rem;
+    height: 1.5rem;
+  }
+  .button--post span {
+    font-size: 0.8rem;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+/* мобильная версия */
+@media screen and (max-width: 769px) {
+  * {
+      font-size: 5vw;
   }
-  to {
-    transform: rotate(360deg);
+  .container {
+    padding: 0 0.625rem;
+  }
+  .title--post {
+    font-size: 1.1rem;
+  }
+  .text--post {
+    font-size: 0.8rem;
+  }
+  .link--post {
+    width: 4rem;
+    height: 1.2rem;
+    margin-left: auto;
+  }
+  h2.title--header {
+    font-size: 0.7rem;
+  }
+  h5.title--header {
+    font-size: 0.4rem;
+  }
+  h1.title--header {
+    font-size: 1rem;
+  }
+  .form--search label {
+    font-size: 0.9rem;
+  }
+  .button--post span {
+    font-size: 0.6rem;
   }
 }
+

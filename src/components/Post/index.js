@@ -1,16 +1,16 @@
 import React from "react";
-import { Button, Intent } from "@blueprintjs/core";
+import { Button, Card } from "@blueprintjs/core";
 import { Link } from "react-router-dom";
 
 const Post = ({ title, body, to, text }) => {
   return (
-    <div>
-      <h1>{title}</h1>
-      <p>{body}</p>
-      <Link to={to}>
-        <Button intent={Intent.SUCCESS}>{text}</Button>
+    <Card interactive={false} className="card" >
+      <h1 className="title--post">{title}</h1>
+      <p className="text--post">{body}</p>
+      <Link className="link--post" to={to}>
+        <Button className="button--post">{text}</Button>
       </Link>
-    </div>
+    </Card>
   );
 };
 
