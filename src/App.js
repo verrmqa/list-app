@@ -12,7 +12,7 @@ const App = () => {
       <Header />
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/post/:postId" component={Post} />
+        <Route path="/:postId" component={Post} />
       </Switch>
       <Footer />
     </div>
