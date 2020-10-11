@@ -5,7 +5,7 @@ import "./mobile.css";
 const Header = () => {
   return (
     <header className="header">
-      <div className="container container__bg">
+      <div className="container">
         <h2 className="title--header">test task</h2>
         <h5 className="title--header">for</h5>
         <h1 className="title--header">destralegal.ru</h1>

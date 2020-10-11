@@ -139,16 +139,29 @@ a {
 .wrapper {
   display: flex;
   flex-direction: column;
+  height: 100vh;
+}
+.container {
+  width: 100%;
+  max-width: 1600px;
+  padding: 0 12.5rem;
+  margin: 0 auto;
 }
 
 @media screen and (max-width: 1200px) {
   * {
     font-size: 2.0833vw;
   }
+  .container {
+    padding: 0 1.5625rem;
+  }
 }
 
 @media screen and (max-width: 769px) {
   * {
     font-size: 5vw;
+  }
+  .container {
+    padding: 0 0.625rem;
   }
 }

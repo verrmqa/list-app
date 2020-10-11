@@ -1,8 +1,4 @@
-.container {
-  max-width: 1600px;
-  padding: 0 12.5rem;
-  margin: 0 auto;
-}
+
 .home {
   flex-grow: 1;
   overflow-y: scroll;
